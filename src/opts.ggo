@@ -1,0 +1,13 @@
+package "boxing"
+version "0.1.0"
+usage "boxing [OPTIONS] [FILE]"
+
+option "box"    b "Specify box" string typestr="<box>" optional
+option "create" c "Create new box" dependon="box" optional
+option "append" a "Append given entries to the specified box" string typestr="<b1>,<b2>..." dependon="box" optional
+option "read"   r "Read the box" dependon="box" optional
+option "delete" d "Delete the box and all entries contained in" dependon="box" optional
+option "list"   l "List all existing boxes" optional
+
+text "\nLicense: GPLv3+: GNU GPL version 3 or later.\nThis is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\nWritten by yachmenka <yachmenka.git@gmail.com>"
+versiontext "License: GPLv3+: GNU GPL version 3 or later.\nThis is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\nWritten by yachmenka <yachmenka.git@gmail.com>"
