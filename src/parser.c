@@ -253,8 +253,9 @@ char *_box_token_value(const char *str, enum token_type type)
 
 /* Assume that bt->type == BOX_TITLE */
 size_t  _count_indent_for_box(const struct box_token *bt)
-{
-    size_t maxlen = strlen(bt->value);
+{    
+    /* Title always takes 1 character less space */
+    size_t maxlen = strlen(bt->value) - 1; 
     while ((bt = bt->next) && bt->type == BOX_ITEM) {
         size_t len = strlen(bt->value);
         maxlen = (len > maxlen)? len : maxlen;
