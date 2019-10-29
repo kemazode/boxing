@@ -184,7 +184,8 @@ const struct box_token *box_parser_token_add(struct box_parser *bp, const char *
         new_token->next = bp->start;
         if (bp->start) bp->start->prev = new_token;
         bp->start = new_token;
-        
+        if (!bp->end) bp->end = new_token;
+               
     /*     | 
      *     v
      * end, ... */
