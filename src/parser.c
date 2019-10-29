@@ -238,11 +238,19 @@ char *_box_token_value(const char *str, enum token_type type)
     size_t lmargin = (type == BOX_TITLE)? 1 : 2;
     
     const char *beg = (str += lmargin);
-    while (!isspace(*str)) ++str;
-    const char *end = str;
+    size_t size = strlen(str);
     
-    /* end refer to unvalid symbol */
-    size_t len = end - beg;
+    /* Discard spaces from the end */
+    const char *end = str + size - 1;
+    
+    switch (type) {
+        case BOX_TITLE: while (isspace(*end)) --end; break;
+        case BOX_ITEM: while(*end != '|' && end != beg) --end;
+                        while(isspace(*--end));
+                        break;
+    }
+    
+    size_t len = end - beg + 1;
      
     char *value = malloc(len + 1);
     strncpy(value, beg, len);
