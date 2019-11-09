@@ -1,4 +1,4 @@
-### $ boxing --help
+### boxing --help
 ```
 Usage: boxing [OPTIONS] [FILE]
 boxing is a simple program helps you to create easy-to-read lists, grouped in blocks
