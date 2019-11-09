@@ -1,3 +1,4 @@
+### $ boxing --help
 ```
 Usage: boxing [OPTIONS] [FILE]
 boxing is a simple program helps you to create easy-to-read lists, grouped in blocks
@@ -18,16 +19,44 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 Written by yachmenka <yachmenka.git@gmail.com>
 ```
 
-For example,
-
-$ boxing -cb "Text browsers" -a w3m,elinks,links,lynx browsers  
-$ cat browsers
+### Example
+$ cat words.list
 ```
- Text browsers
-+--------------+
-| w3m          |
-| elinks       |
-| links        |
-| lynx         |
-+--------------+
+impose
+fabricate
+interact
+bunch
+possess
+properly
+whatever
+facilitate
+clap
+avenger
+wild
+extensive
+convinced
+cause
+insipre
+```
+$ boxing -ca "$(cat words.list | tr '\n' ',')" -b "$(date "+%D")" words  
+$ cat words
+```
+ 11/09/19
++------------+
+| impose     |
+| fabricate  |
+| interact   |
+| bunch      |
+| possess    |
+| properly   |
+| whatever   |
+| facilitate |
+| clap       |
+| avenger    |
+| wild       |
+| extensive  |
+| convinced  |
+| cause      |
+| insipre    |
++------------+
 ```
