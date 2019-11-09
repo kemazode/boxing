@@ -1,5 +1,5 @@
 package "boxing"
-version "0.1.0"
+version "0.1.1"
 purpose "boxing is a simple program helps you to create easy-to-read lists, grouped in blocks"
 usage "boxing [OPTIONS] [FILE]"
 
