@@ -77,6 +77,7 @@ int box_append(struct box_parser *bp, const char *box, char *items)
 			const char *item = strtok(items, ",");
 			if (!item) {
 				cmdline_parser_print_help();
+				box_parser_rewind(bp);
 				return 1;
 			}
 			token = box_parser_token_add(bp, item, BOX_ITEM, token);

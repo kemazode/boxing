@@ -92,7 +92,7 @@ void box_parser_free(struct box_parser *bp)
 
 const struct box_token *box_parser_rewind(struct box_parser *bp)
 {
-	return bp->cur = bp->start;
+	return bp->cur = NULL;
 }
 
 
